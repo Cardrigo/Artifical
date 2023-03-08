@@ -9,19 +9,14 @@ function openMenu() {
     body.classList.toggle("_lock");
     navBg.classList.toggle("active");
 }
-if (menu && menuBtb) {
-    menuBtb.addEventListener("click", () => {
+window.addEventListener("click", function (e) {
+    if (e.target.closest(".nav-icon") || e.target.classList.contains(".nav-icon") || e.target.closest(".nav-bg") || e.target.closest(".header-link")) {
         openMenu()
-    })
-    navBg.addEventListener("click", (e) => {
-        if (e.target.closest(".nav-bg")) {
-            openMenu()
-        }
-    })
-}
+    }
+})
 
-const swiper = new Swiper('.swiper', {
-    mouseboard: true, 
+var swiper = new Swiper('.swiper', {
+    mouseboard: true,
     keyboard: true,
     slidesPerView: 1,
     spaceBetween: 25,
@@ -65,14 +60,14 @@ const swiper = new Swiper('.swiper', {
 
 let accor = document.querySelectorAll(".btn");
 
-    accor.forEach(btn =>{
-      btn.addEventListener("click", function(){
-      let panel = this.nextElementSibling;
-      if(panel.style.maxHeight){
-        document.querySelectorAll(".contentBx").forEach(el =>{el.style.maxHeight = null })
-      }else{
-        document.querySelectorAll(".contentBx").forEach(el =>{el.style.maxHeight = null })
-        panel.style.maxHeight = panel.scrollHeight + 'px'
-      }
+accor.forEach(btn => {
+    btn.addEventListener("click", function () {
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            document.querySelectorAll(".contentBx").forEach(el => { el.style.maxHeight = null })
+        } else {
+            document.querySelectorAll(".contentBx").forEach(el => { el.style.maxHeight = null })
+            panel.style.maxHeight = panel.scrollHeight + 'px'
+        }
     })
-    })
+})
