@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    <header class="header">
+    <header id="home" class="header">
         <div class="nav-bg">
         </div>
         <div class="header__top">
             <div class="container">
-                <a href="" class="header__top-logo">
+                <a href="#" class="header__top-logo">
                     <picture>
                         <source srcset="./icons/header-logo-robot.svg" media="(max-width: 768px)">
                         <img srcset="./icons/header-logo.svg" alt="My default image">
@@ -27,11 +27,11 @@
                     <div class="header__navigatiom">
                         <nav class="header__navbar">
                             <ul class="nav">
-                                <li class="item"><a href="#" class="header-link">Home</a></li>
-                                <li class="item"><a href="#" class="header-link">About</a></li>
-                                <li class="item"><a href="#" class="header-link">servise</a></li>
-                                <li class="item"><a href="#" class="header-link">blog</a></li>
-                                <li class="item"><a href="#" class="header-link">contact</a></li>
+                                <li class="item"><a href="#home" class="header-link">Home</a></li>
+                                <li class="item"><a href="#hero" class="header-link">About</a></li>
+                                <li class="item"><a href="#servises" class="header-link">servises</a></li>
+                                <li class="item"><a href="#blog" class="header-link">blog</a></li>
+                                <li class="item"><a href="#contact" class="header-link">contact</a></li>
                             </ul>
                         </nav>
                         <a href="#" class="btn-link">Sign in</a>
@@ -71,7 +71,7 @@
         </div>
     </header>
 
-    <div class="hero">
+    <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-img"><img src="./img/hreo.png" alt=""></div>
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="view">
+        <div id="servises" class="view">
             <div class="swiper hero-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide hero-slide">
@@ -219,9 +219,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="about">
+    <section id="blog" class="about">
         <div class="container">
             <div class="about__info">
                 <h1 class="about__info-title">What our clients say about our awesome solutions</h1>
@@ -237,9 +237,9 @@
                 <img src=".//img/about/about3 1.png" alt="">
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer__card first-card">
                 <div class="footer-img"><img src="./img/footer/Group 396.svg" alt="">

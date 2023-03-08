@@ -10,11 +10,26 @@ function openMenu() {
     navBg.classList.toggle("active");
 }
 window.addEventListener("click", function (e) {
-    if (e.target.closest(".nav-icon") || e.target.classList.contains(".nav-icon") || e.target.closest(".nav-bg") || e.target.closest(".header-link")) {
+    if (e.target.closest(".nav-icon") || e.target.classList.contains(".nav-icon") || e.target.closest(".nav-bg")) {
         openMenu()
+    }
+    if(menu.closest(".header__navbar.active") && e.target.classList.contains("header-link")){
+       openMenu()
     }
 })
 
+const anchors = document.querySelectorAll(".header-link");
+anchors.forEach(anchor => {
+    anchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        const blockID = anchor.getAttribute('href').substring(1);
+        document.getElementById(blockID).scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        })
+
+    })
+})
 var swiper = new Swiper('.swiper', {
     mouseboard: true,
     keyboard: true,
@@ -57,9 +72,7 @@ var swiper = new Swiper('.swiper', {
         },
     },
 });
-
 let accor = document.querySelectorAll(".btn");
-
 accor.forEach(btn => {
     btn.addEventListener("click", function () {
         let panel = this.nextElementSibling;
