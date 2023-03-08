@@ -363,13 +363,23 @@ body._lock {
   background: #2C3647;
 }
 .hero .swiper {
+  margin: 0 auto;
   overflow: hidden;
-  position: relative;
 }
 @media (min-width: 1920px) {
   .hero .swiper {
     width: 1920px;
   }
+}
+.hero .swiper-android .swiper-slide,
+.hero .swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+.hero .swiper-horizontal {
+  touch-action: pan-y;
+}
+.hero .swiper-vertical {
+  touch-action: pan-x;
 }
 .hero .swiper-wrapper {
   display: inline-flex;
